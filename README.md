@@ -1,4 +1,4 @@
-![](https://img.shields.io/github/license/Naavlad/postgresql_container)
+![](https://img.shields.io/github/license/Naavlad/postgresql_container?style=flat-square)
 # База PosqreSQL
 Для параллельного развертывания на одном сервере контейнеров по имени проекта
 
