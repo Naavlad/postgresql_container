@@ -1,0 +1,19 @@
+version: "3.3"
+
+services:
+  postgres:
+    image: postgres
+    restart: always
+    ports:
+      - "$EXTERNAL_PORT:5432"
+    env_file:
+      - .env
+    environment:
+      - POSTGRES_DB=$COMPOSE_PROJECT_NAME
+      - POSTGRES_USER=$POSTGRES_USER
+      - POSTGRES_PASSWORD=$POSTGRES_PASSWORD
+    volumes:
+      - postgresql:/var/lib/postgresql/data
+
+volumes:
+  postgresql:
