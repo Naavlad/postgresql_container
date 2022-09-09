@@ -17,3 +17,9 @@ services:
 
 volumes:
   postgresql:
+
+
+networks:
+  default:
+    external: true
+    name: $NETWORK
