@@ -1,7 +1,4 @@
-![](https://img.shields.io/github/license/Naavlad/postgresql_container?style=flat-square)
 # База PosqreSQL
-
-Для параллельного развертывания на одном сервере контейнеров по имени проекта
 
 ## Stack
 
@@ -9,24 +6,26 @@
 
 ## Подготовка к запуску
 
-git clone [https://github.com/Naavlad/postgresql_container.git](https://github.com/Naavlad/postgresql_container.git)
-
 Переименовать файл .env.dev в .env и указать в нем недостающую информацию
 
-`COMPOSE_PROJECT_NAME` - Будет использоваться как POSTGRES_DB  
-`EXTERNAL_PORT` - внешний порт(может быть несколько для разных контейнеров)
+`EXTERNAL_PORT` - внешний порт (может быть несколько для разных контейнеров)
 
-Если несколько ```docker-compose``` расскоментировать ```networks```
-и указать внутреннюю сеть
+- установлен по умолчанию - `5432`
 
 `NETWORK` - Внутренняя сеть сервера для нескольких docker-compose
 
+- по умолчанию создается при запуске `postgres_network`
+
 ```bash
-COMPOSE_PROJECT_NAME= <Название проекта>
-EXTERNAL_PORT= <внешний порт>
+# default settings in docker-compose
+# EXTERNAL_PORT=5432
+# NETWORK=postgres_network
+EXTERNAL_PORT=
+NETWORK=
 
-NETWORK=<сеть>
 
+# set
+POSTGRES_DB=
 POSTGRES_USER=
 POSTGRES_PASSWORD=
 ```
